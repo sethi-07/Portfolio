@@ -32,8 +32,8 @@ const Navbar = () => {
         <a href = "#hero"
         className='text-3xl font-bold flex items-center text-primary'>
           <span className='relative z-10'>
-            <span className='text-glow text-foreground'>Abhinandan's</span> 
-          {" "}Portfolio</span>
+            <span className='text-glow text-foreground'>Portfolio</span> 
+          </span>
         </a>
 
       {/* Desktop Nav */}
