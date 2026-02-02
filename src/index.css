@@ -18,20 +18,34 @@
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-meteor: meteor 5s linear infinite;
-  
+
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   @keyframes pulse-subtle {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
   }
 
   @keyframes fade-in {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   @keyframes meteor {
@@ -44,11 +58,10 @@
       opacity: 0;
     }
   }
-
 }
 
-@layer base{
-  :root{
+@layer base {
+  :root {
     --border: 210 16% 93%;
     --background: 210 20% 98%;
     --foreground: 222 47% 11%;
@@ -59,7 +72,7 @@
     --card: 0 0% 100%;
   }
 
-  .dark{
+  .dark {
     --border: 210 16% 25%;
     --background: 222 20% 5%;
     --foreground: 222 47% 90%;
@@ -70,17 +83,19 @@
     --card: 210 20% 15%;
   }
 
-  *{
+  * {
     @apply border-border;
   }
 
-  html{
+  html {
     @apply scroll-smooth;
   }
 
   body {
     @apply bg-background text-foreground transition-colors duration-300;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 
@@ -109,16 +124,16 @@
   }
 }
 
-@utility text-glow{
+@utility text-glow {
   @apply relative;
   text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
 }
 
-@utility card-hover{
+@utility card-hover {
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
 }
 
-@utility gradient-border{
+@utility gradient-border {
   @apply relative rounded-md;
   background: linear-gradient(to right, hsl(var(--card)));
   background-clip: padding-box;
@@ -141,10 +156,27 @@
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
-#root{
+#root {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
   text-align: center;
 }
 
+@layer components {
+  .toast-theme {
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.75rem; /* rounded-xl vibe */
+    box-shadow: 0 10px 25px hsl(var(--foreground) / 0.1);
+  }
+
+  .toast-success {
+    border-color: hsl(var(--primary));
+  }
+
+  .toast-error {
+    border-color: hsl(0 84% 60%);
+  }
+}
