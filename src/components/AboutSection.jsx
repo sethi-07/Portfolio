@@ -81,7 +81,7 @@ const AboutSection = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="font-semibold text-foreground">
-                    Data Analysis
+                    AI/ML Integration
                   </h4>
                   <p>
                     Bridging the gap between complex machine learning models and
